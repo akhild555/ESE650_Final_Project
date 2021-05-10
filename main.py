@@ -146,8 +146,9 @@ def run_slam(src_dir, log_dir, idx, split):
             plt.draw()
             plt.pause(0.01)
             plt.imshow(final_map)
+            np.save('final_map_' + str(idx), final_map)
             plt.title("Dataset " + str(idx))
-            plt.savefig("Dataset0.png")
+            plt.savefig("Dataset" + str(idx) + ".png")
 
 @click.command()
 @click.option('--src_dir', default='./', help='data directory', type=str)
